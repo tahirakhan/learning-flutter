@@ -41,27 +41,15 @@ class _DigitalClockState extends State<DigitalClock> {
     });
   }
   int _counter = 0;
-  int hour = 0;
-  int minute = 0;
-  int second = 0;
+  int hour = DateTime.now().hour;
+  int minute = DateTime.now().minute;
+  int second = DateTime.now().second;
 
   void _incrementCounter() {
     setState(() {
-      if (second < 59) {
-        second++;
-      } else {
-        second = 0;
-        if (minute < 59) {
-          minute++;
-        } else {
-          minute = 0;
-          if (hour < 23) {
-            hour++;
-          } else {
-            hour = 0;
-          }
-        }
-      }
+      hour = DateTime.now().hour;
+      minute = DateTime.now().minute;
+      second = DateTime.now().second;
 
       _counter++;
     });
